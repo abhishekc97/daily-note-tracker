@@ -1,0 +1,25 @@
+.app-container {
+    background-color: #fff;
+    color: black;
+    border: none;
+    position: absolute;
+    width: 1100px;
+    height: 780px;
+    box-shadow: 0px 0px 5px 3px rgb(110, 109, 109);
+    opacity: 90%;
+    display: flex;
+}
+
+
+.left-container {
+    height: 782px;
+    width: 343px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 10px -3px rgb(110, 109, 109);
+}
+
+.right-container {
+    height: 100%;
+    width: 70%;
+    /* box-shadow: 2px 12px 27px rgba(4, 16, 18, 0.32) */
+}

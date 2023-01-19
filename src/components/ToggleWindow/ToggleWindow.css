@@ -1,0 +1,26 @@
+.toggle-window {
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-heading {
+    width: 343.75px;
+    height: 76.39px;
+    left: 0px;
+    top: 0px;
+    color: #fff;
+    background: #3da577;
+    box-shadow: 0px 3.05556px 11.4583px rgba(28, 28, 28, 0.1);
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+
+.option-box {
+    height: 76.38888549804688px;
+    width: 343.75px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+}

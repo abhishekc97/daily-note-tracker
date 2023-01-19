@@ -1,20 +1,15 @@
 .App {
-	height: 100vh;
-	background-image: url("../public/images/wp4676582.webp");
-	background-size: cover;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
-.app-container {
-	background-color: #FFF ;
-	color: black;
-	border: none;
-	position: absolute;
-	width: 80%;
-	height: 62%;
-	box-shadow: 0px 0px 5px 3px rgb(110, 109, 109);
-	opacity: 90%;
-	display: flex;
+.app-body {
+    height: 100vh;
+    background-image: url("../public/images/wp4676582.webp");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    top: 0px;
+    left: 0px;
 }
+

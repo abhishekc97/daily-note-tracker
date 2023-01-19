@@ -1,13 +1,23 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./AppRouter.module.css";
+import InputBox from "../components/InputBox/InputBox";
+import NotesWindow from "../components/NotesWindow/NotesWindow";
+import ToggleWindow from "../components/ToggleWindow/ToggleWindow";
+import "./AppRouter.css";
 
 function AppRouter() {
-    return ( 
-        <>
-            App Router
-        </>
-     );
+	return (
+		<div className="app-container">
+			<div className="left-container">
+				<ToggleWindow />
+			</div>
+			<div className="right-container">
+				Right side
+				<NotesWindow />
+				<InputBox />
+			</div>
+		</div>
+	);
 }
 
 export default AppRouter;
