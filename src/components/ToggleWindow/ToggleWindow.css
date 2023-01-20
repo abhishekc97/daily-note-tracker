@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
 }
-.sidebar-heading {
+.sidebar-heading-box {
     width: 343.75px;
     height: 76.39px;
     left: 0px;
@@ -15,12 +15,93 @@
     line-height: 26px;
     letter-spacing: 0.01em;
     text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.heading-title {
+    font-family: Montserrat;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    margin: 0px 10px 0px 15px;
 }
 
 .option-box {
-    height: 76.38888549804688px;
+    height: 77px;
     width: 343.75px;
     left: 0px;
     top: 0px;
     border-radius: 0px;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.option-name-1 {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    /* text-align: left; */
+    color: #806bff;
+}
+
+.option-name-2 {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    /* text-align: left; */
+    color: #ff6b6b;
+}
+
+
+.sidebar-heading-icon {
+    background-image: url("../../../public/images/note-tracker.svg");
+    width: 30.56px;
+    height: 30.56px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.option-icon-1 {
+    background-image: url("../../../public/images/notes.svg");
+    width: 42.01px;
+    height: 42.01px;
+    margin: 15px;
+    background-color: #806bff;
+    text-align: center;
+    border-radius: 50px;
+    border: none;
+    background-size: 60%;
+    background-position: center; /* center the image within the button */
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    
+}
+
+.option-icon-2 {
+    background-image: url("../../../public/images/bookmarks.svg");
+    width: 42.01px;
+    height: 42.01px;
+    margin: 15px;
+    background-color: #ff6b6b;
+    text-align: center;
+    border-radius: 50px;
+    border: none;
+    background-size: 60%;
+    background-position: center; /* center the image within the button */
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+
 }
