@@ -1,0 +1,31 @@
+.input-flex-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    width: 756px;
+    
+}
+
+.text-box {
+    height: 42px;
+    width: 657px;
+    border: 1px solid grey;
+    border-radius: 9px;
+}
+
+.send-icon {
+    background-image: url("../../../public/images/send.svg");
+    height: 42px;
+    width: 42px;
+    background-color: #3DA577;
+    text-align: center;
+    margin-left: 10px;
+    border-radius: 50px;
+    border: none;
+    background-size: 60%;
+    background-position: center; /* center the image within the button */
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+}

@@ -1,8 +1,12 @@
+import React from "react";
+import Card from "../Card/Card";
+import "./NotesWindow.css";
+
 function NotesWindow() {
     return ( 
-        <div>
-            Note 1
-            Note 2
+        <div className="notes-window">
+            <Card />
+            <Card />
         </div>
      );
 }
