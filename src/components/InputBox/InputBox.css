@@ -28,4 +28,14 @@
     background-position: center; /* center the image within the button */
     background-blend-mode: lighten;
     background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/* Hide the browser's default checkbox */
+.send-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }

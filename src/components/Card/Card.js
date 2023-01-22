@@ -1,19 +1,21 @@
 import React from "react";
 import "./Card.css";
 
-function Card() {
+function Card(props) {
+    const message = props.message;
+    const date = props.date;
+
     return ( 
         <div className="card-container">
-            <p className="card-data">Lorem ipsum dolor sit amet consectetur.
-                Enim tellus fusce pretium sed a et convallis 
-                eget. Etiam aliquet tortor nascetur at erat. 
-                Malesuada egestas praesent quam cras. In varius pharetra sit porttitor.
+            <p className="card-data">
+                { message }
             </p>
             <div className="date-box">
                 <p className="date-info">
-                    12-08-2022 12:00 PM
+                    { date }
                 </p>
             </div>
+            
             
         </div>
      );

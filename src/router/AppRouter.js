@@ -6,12 +6,7 @@ import RightWindow from "../components/RightWindow/RightWindow";
 import ToggleWindow from "../components/ToggleWindow/ToggleWindow";
 import "./AppRouter.css";
 
-function AppRouter() {
-	const [currentWindow, setCurrentWindow] = useState('');
-
-	function setWindow() {
-
-	}
+function AppRouter(props) {
 		
     return (
         <BrowserRouter>
@@ -20,7 +15,7 @@ function AppRouter() {
                     <ToggleWindow />
                 </div>
                 <div className="right-container">
-                    <RightWindow location={currentWindow} />
+                    <RightWindow />
                 </div>
             </div>
         </BrowserRouter>

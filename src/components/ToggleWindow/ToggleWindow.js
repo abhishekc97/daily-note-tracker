@@ -1,8 +1,14 @@
 import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./ToggleWindow.css";
-import { Link, useLocation } from "react-router-dom";
 
 function ToggleWindow() {
+    
+    const navigate = useNavigate();
+    let location = useLocation();
+
+    // console.log("location", location);
+
     return (
         <div className="toggle-window">
             <div className="sidebar-heading-box">

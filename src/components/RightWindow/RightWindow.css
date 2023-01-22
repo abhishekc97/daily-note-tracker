@@ -6,6 +6,7 @@
 .notes-window-container {
     height: 717px;
     width: 756px;
+    overflow-y: scroll;
 }
 
 .input-box-container {
@@ -13,5 +14,25 @@
     width: 756px;
     left: 343.75px;
     top: 717.29px;
-    background-color: #FFF;
+    background-color: #fff;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
