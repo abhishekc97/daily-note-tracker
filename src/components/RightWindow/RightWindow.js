@@ -6,12 +6,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import "./RightWindow.css"
 
-const NOTES_LOCAL_STORAGE_KEY = 'dailyNotes.RightWindow.notes';
-const BOOKMARKS_LOCAL_STORAGE_KEY = 'dailyNotes.RightWindow.bookmarks';
-
 // parent component of the noteswindow and input box
 function RightWindow(props) {
-    // location data
+
     const navigate = useNavigate();
     let location = useLocation();
 
@@ -26,29 +23,22 @@ function RightWindow(props) {
     function refreshMemory() {
         const storedNotes = [];
         if(localStorage.NOTES_LOCAL_STORAGE_KEY) storedNotes.push(...JSON.parse(localStorage.NOTES_LOCAL_STORAGE_KEY));
-        // console.log(storedNotes);
         setNotes(storedNotes);
 
         const storedBookmarks = [];
         if(localStorage.BOOKMARKS_LOCAL_STORAGE_KEY) storedBookmarks.push(...JSON.parse(localStorage.BOOKMARKS_LOCAL_STORAGE_KEY));
         setBookmarks(storedBookmarks);
     }
-    // retrieve stored cards
+
     useEffect(() => {
         
     }, []);
-
-    // save cards into local storage
-    // useEffect(() => {
-    //     localStorage.setItem(CARDS_LOCAL_STORAGE_KEY, JSON.stringify(cards))        
-    // }, [cards]);
 
     function addCard(data) {
         const message = data;
         let date = new Date();
         const newCard =  { id: uuidv4(), message: message, date: date.getDate()+"-"+ date.getMonth()+1+"-"+ date.getFullYear()+" "+date.getHours()+":"+date.getMinutes() };
         setCard(newCard);
-        // setCard({ id: uuidv4(), message: message, date: new Date()});
 
 
         let newCards = [];
@@ -66,38 +56,20 @@ function RightWindow(props) {
             navigate("/bookmarks");
         }
         refreshMemory();
-        // console.log("message", message);
-        // console.log("card", card);
-        // console.log(notes);
-        // console.log(bookmarks);
-
-        // cards.push(prevCards => [...prevCards, { id: uuidv4(), message: message, date: new Date()} ])
-        // console.log("cards", cards);
-
     }
 
     function populateCards() {
         if(location.pathname === "/") {
             setCards(notes);
-            // if(localStorage.NOTES_LOCAL_STORAGE_KEY) setCards(...JSON.parse(localStorage.NOTES_LOCAL_STORAGE_KEY));
-
         }
         else if(location.pathname === "/bookmarks") {
             setCards(bookmarks);
-            // if(localStorage.BOOKMARKS_LOCAL_STORAGE_KEY) setCards(...JSON.parse(localStorage.BOOKMARKS_LOCAL_STORAGE_KEY));
-
         }
-        console.log(cards);
+        // console.log(cards);
     }
-    // refreshMemory();
+
     useEffect(() => {
-        
         populateCards();
-        // if(localStorage.NOTES_LOCAL_STORAGE_KEY) setCards(...JSON.parse(localStorage.NOTES_LOCAL_STORAGE_KEY));
-        // console.log("card", card);
-        // console.log(notes);
-        // console.log(bookmarks);
-        
     });
     
 
