@@ -9,14 +9,14 @@ function NotesWindow(props) {
 	const navigate = useNavigate();
     let location = useLocation();
 
-	// let cards = [];
-	// if(location === "/") {
-	// 	cards.push(...JSON.parse(localStorage.NOTES_LOCAL_STORAGE_KEY));
-	// } else if(location === "/bookmarks") {
-	// 	cards.push(...JSON.parse(localStorage.BOOKMARKS_LOCAL_STORAGE_KEY));
-	// }
+	let cards;
+	if(location.pathname === "/") {
+		cards = props.notes;
+	} else if(location.pathname === "/bookmarks") {
+		cards = props.bookmarks;
+	}
 
-	const cards = props.cards;
+	// const cards = props.cards;
 	console.log(cards);
 
 	cards.forEach(element => {
@@ -30,11 +30,6 @@ function NotesWindow(props) {
 		console.log(element);
 		console.log(index);
 	})
-	
-	// var cardsArray = JSON.parse(cards);
-	// cardsArray.map((ele, ind) => {
-	// 	return console.log("ele", ele);
-	// })
 
 	useEffect(() => {
 
@@ -48,7 +43,7 @@ function NotesWindow(props) {
 					var message = element.message;
 					var date = element.date;
 					console.log(index, id, message, date);
-					return (<Card key={index} info={element} message={message} date={date} /> );
+					return (<Card key={index} info={element} message={message} date={date} location={location} /> );
 					
 				})
 			}

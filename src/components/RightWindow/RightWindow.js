@@ -45,8 +45,8 @@ function RightWindow(props) {
 
     function addCard(data) {
         const message = data;
-
-        const newCard =  { id: uuidv4(), message: message, date: new Date().getDate()+"-"+ new Date().getMonth()+1+"-"+ new Date().getFullYear()+" "+new Date().getHours()+":"+new Date().getMinutes() };
+        let date = new Date();
+        const newCard =  { id: uuidv4(), message: message, date: date.getDate()+"-"+ date.getMonth()+1+"-"+ date.getFullYear()+" "+date.getHours()+":"+date.getMinutes() };
         setCard(newCard);
         // setCard({ id: uuidv4(), message: message, date: new Date()});
 
@@ -79,9 +79,13 @@ function RightWindow(props) {
     function populateCards() {
         if(location.pathname === "/") {
             setCards(notes);
+            // if(localStorage.NOTES_LOCAL_STORAGE_KEY) setCards(...JSON.parse(localStorage.NOTES_LOCAL_STORAGE_KEY));
+
         }
         else if(location.pathname === "/bookmarks") {
             setCards(bookmarks);
+            // if(localStorage.BOOKMARKS_LOCAL_STORAGE_KEY) setCards(...JSON.parse(localStorage.BOOKMARKS_LOCAL_STORAGE_KEY));
+
         }
         console.log(cards);
     }
@@ -89,17 +93,18 @@ function RightWindow(props) {
     useEffect(() => {
         
         populateCards();
+        // if(localStorage.NOTES_LOCAL_STORAGE_KEY) setCards(...JSON.parse(localStorage.NOTES_LOCAL_STORAGE_KEY));
         // console.log("card", card);
         // console.log(notes);
         // console.log(bookmarks);
         
-    }, [card, notes, bookmarks]);
+    });
     
 
     return ( 
         <div className="right-window-container">
             <div className="notes-window-container">
-                <NotesWindow cards={cards} />
+                <NotesWindow cards={cards} notes={notes} bookmarks={bookmarks} />
             </div>
             <div className="input-box-container">
                 <InputBox addCard={addCard} />
