@@ -46,6 +46,21 @@
     cursor: pointer;
 }
 
+.option-box-selected {
+    height: 77px;
+    width: 343.75px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    background-color: #F0F0F0;
+}
+
 .option-name-1 {
     font-size: 15px;
     font-weight: 500;

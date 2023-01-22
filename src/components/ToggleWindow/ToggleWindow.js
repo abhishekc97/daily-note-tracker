@@ -7,8 +7,6 @@ function ToggleWindow() {
     const navigate = useNavigate();
     let location = useLocation();
 
-    // console.log("location", location);
-
     return (
         <div className="toggle-window">
             <div className="sidebar-heading-box">
@@ -17,11 +15,11 @@ function ToggleWindow() {
                     <span className="heading-title">DAILY NOTE TRACKER</span>
                 </div>
             </div>
-            <div className="option-box">
+            <div className={location.pathname === "/" ? "option-box-selected" : "option-box"} onClick={() => navigate("/")} >
                 <div className="option-icon-1"></div>
                 <div className="option-name-1">Daily Notes</div>
             </div>
-            <div className="option-box">
+            <div className={location.pathname === "/bookmarks" ? "option-box-selected" : "option-box"} onClick={() => navigate("/bookmarks")} >
                 <div className="option-icon-2"></div>
                 <div className="option-name-2">Bookmarks</div>
             </div>

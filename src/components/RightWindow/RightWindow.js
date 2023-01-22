@@ -22,8 +22,8 @@ function RightWindow(props) {
     const [notes, setNotes] = useState([]);
     const [bookmarks, setBookmarks] = useState([]);
 
-    // retrieve stored cards
-    useEffect(() => {
+
+    function refreshMemory() {
         const storedNotes = [];
         if(localStorage.NOTES_LOCAL_STORAGE_KEY) storedNotes.push(...JSON.parse(localStorage.NOTES_LOCAL_STORAGE_KEY));
         // console.log(storedNotes);
@@ -32,6 +32,10 @@ function RightWindow(props) {
         const storedBookmarks = [];
         if(localStorage.BOOKMARKS_LOCAL_STORAGE_KEY) storedBookmarks.push(...JSON.parse(localStorage.BOOKMARKS_LOCAL_STORAGE_KEY));
         setBookmarks(storedBookmarks);
+    }
+    // retrieve stored cards
+    useEffect(() => {
+        
     }, []);
 
     // save cards into local storage
@@ -42,7 +46,7 @@ function RightWindow(props) {
     function addCard(data) {
         const message = data;
 
-        const newCard =  { id: uuidv4(), message: message, date: new Date()};
+        const newCard =  { id: uuidv4(), message: message, date: new Date().getDate()+"-"+ new Date().getMonth()+1+"-"+ new Date().getFullYear()+" "+new Date().getHours()+":"+new Date().getMinutes() };
         setCard(newCard);
         // setCard({ id: uuidv4(), message: message, date: new Date()});
 
@@ -53,13 +57,15 @@ function RightWindow(props) {
             localStorage.NOTES_LOCAL_STORAGE_KEY && newCards.push(...JSON.parse(localStorage.NOTES_LOCAL_STORAGE_KEY));
             newCards.push(newCard);
             localStorage.NOTES_LOCAL_STORAGE_KEY = JSON.stringify(newCards);
+            navigate("/");
 
         } else if(location.pathname === "/bookmarks") {
             localStorage.BOOKMARKS_LOCAL_STORAGE_KEY && newCards.push(...JSON.parse(localStorage.BOOKMARKS_LOCAL_STORAGE_KEY));
             newCards.push(newCard);
             localStorage.BOOKMARKS_LOCAL_STORAGE_KEY = JSON.stringify(newCards);
+            navigate("/bookmarks");
         }
-
+        refreshMemory();
         // console.log("message", message);
         // console.log("card", card);
         // console.log(notes);
@@ -79,14 +85,15 @@ function RightWindow(props) {
         }
         console.log(cards);
     }
-
+    // refreshMemory();
     useEffect(() => {
+        
         populateCards();
         // console.log("card", card);
         // console.log(notes);
         // console.log(bookmarks);
         
-    }, [card, notes, bookmarks, cards]);
+    }, [card, notes, bookmarks]);
     
 
     return ( 

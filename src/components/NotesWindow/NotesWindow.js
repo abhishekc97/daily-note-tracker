@@ -2,8 +2,19 @@ import React from "react";
 import { useEffect } from "react";
 import Card from "../Card/Card";
 import "./NotesWindow.css";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function NotesWindow(props) {
+
+	const navigate = useNavigate();
+    let location = useLocation();
+
+	// let cards = [];
+	// if(location === "/") {
+	// 	cards.push(...JSON.parse(localStorage.NOTES_LOCAL_STORAGE_KEY));
+	// } else if(location === "/bookmarks") {
+	// 	cards.push(...JSON.parse(localStorage.BOOKMARKS_LOCAL_STORAGE_KEY));
+	// }
 
 	const cards = props.cards;
 	console.log(cards);
@@ -27,17 +38,18 @@ function NotesWindow(props) {
 
 	useEffect(() => {
 
-	}, cards)
+	}, [cards]);
 
 	return ( 
 		<div className="notes-window">
 			{
-				cards.forEach(element => {
+				cards.map((element, index) => {
 					var id= element.id;
 					var message = element.message;
 					var date = element.date;
-					console.log(id, message, date);
-					return <Card key={id} message={message} date={date} />
+					console.log(index, id, message, date);
+					return (<Card key={index} info={element} message={message} date={date} /> );
+					
 				})
 			}
 			

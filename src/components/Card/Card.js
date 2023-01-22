@@ -4,23 +4,18 @@ import "./Card.css";
 function Card(props) {
     const message = props.message;
     const date = props.date;
+    const info = props.info;
+    console.log(info);
 
-    return ( 
+    return (
         <div className="card-container">
-            <p className="card-data">
-                { message }
-            </p>
+            <p className="card-data">{message}</p>
             <div className="date-box">
-                <p className="date-info">
-                    { date }
-                </p>
+                <p className="date-info">{date}</p>
             </div>
             
-            
         </div>
-     );
+    );
 }
-
-
 
 export default Card;
