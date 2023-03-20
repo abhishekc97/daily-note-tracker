@@ -1,40 +1,45 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import Card from "../Card/Card";
 import "./NotesWindow.css";
-import { useLocation } from "react-router-dom";
 
-function NotesWindow(props) {
-
+function NotesWindow({ notes, bookmarks }) {
     let location = useLocation();
 
-	let cards;
-	if(location.pathname === "/") {
-		cards = props.notes;
-	} else if(location.pathname === "/bookmarks") {
-		cards = props.bookmarks;
-	}
+    let cards;
+    if (location.pathname === "/") {
+        cards = notes;
+    } else if (location.pathname === "/bookmarks") {
+        cards = bookmarks;
+    }
 
-	useEffect(() => {
+    useEffect(() => {}, [cards]);
 
-	}, [cards]);
+    const scrollRef = useRef(null);
 
-	return ( 
-		<div className="notes-window">
-			{
-				cards.map((element, index) => {
-					var id = element.id;
-					var message = element.message;
-					var date = element.date;
-					// console.log(index, id, message, date);
-					return (<Card key={index} info={element} message={message} date={date} location={location} /> );
-					
-				})
-			}
-			
-			
-		</div>
-	);
+    useEffect(() => {
+        scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [notes, bookmarks]);
+
+    return (
+        <div className="notes-window">
+            {cards.map((element, index) => {
+                var message = element.message;
+                var date = element.date;
+                return (
+                    <Card
+                        key={index}
+                        info={element}
+                        message={message}
+                        date={date}
+                        location={location}
+                    />
+                );
+            })}
+            <div ref={scrollRef} />
+        </div>
+    );
 }
 
 export default NotesWindow;

@@ -1,8 +1,9 @@
 .App {
+    height: 100vh;
 }
 
 .app-body {
-    height: 100vh;
+    height: 100%;
     background-image: url("../public/images/wp4676582.webp");
     background-size: cover;
     display: flex;
@@ -13,3 +14,25 @@
     left: 0px;
 }
 
+.app-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    position: absolute;
+    width: 58%;
+    height: 74%;
+    box-shadow: 0px 0px 5px 3px rgb(110, 109, 109);
+    display: flex;
+}
+
+.left-container {
+    width: 30%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 10px -3px rgb(110, 109, 109);
+}
+
+.right-container {
+    width: 70%;
+    height: 100%;
+}

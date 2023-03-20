@@ -3,31 +3,30 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 65px;
-    width: 756px;
-    
+    height: 100%;
+    width: 100%;
 }
 
 .text-box {
-    height: 42px;
-    width: 657px;
+    height: 65%;
+    width: 87%;
     border: 1px solid grey;
     border-radius: 9px;
+    font-size: 1rem;
 }
 
 .send-icon {
-    background-image: url("../../../public/images/send.svg");
+    background: url("../../../public/images/send.svg") no-repeat;
     height: 42px;
     width: 42px;
-    background-color: #3DA577;
+    background-color: #3da577;
     text-align: center;
     margin-left: 10px;
     border-radius: 50px;
     border: none;
     background-size: 60%;
-    background-position: center; /* center the image within the button */
+    background-position: center;
     background-blend-mode: lighten;
-    background-repeat: no-repeat;
     cursor: pointer;
 }
 

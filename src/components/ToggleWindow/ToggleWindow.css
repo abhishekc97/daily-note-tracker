@@ -3,16 +3,16 @@
     flex-direction: column;
 }
 .sidebar-heading-box {
-    width: 343.75px;
+    width: 100%;
     height: 76.39px;
     left: 0px;
     top: 0px;
     color: #fff;
     background: #3da577;
     box-shadow: 0px 3.05556px 11.4583px rgba(28, 28, 28, 0.1);
-    font-size: 21px;
+    font-size: 1.5rem;
     font-weight: 600;
-    line-height: 26px;
+    line-height: 1.5rem;
     letter-spacing: 0.01em;
     text-align: left;
     display: flex;
@@ -24,17 +24,17 @@
 
 .heading-title {
     font-family: Montserrat;
-    font-size: 21px;
+    font-size: 1rem;
     font-weight: 600;
-    line-height: 26px;
+    line-height: 1rem;
     letter-spacing: 0.01em;
     text-align: left;
-    margin: 0px 10px 0px 15px;
+    margin-left: 15px;
 }
 
 .option-box {
     height: 77px;
-    width: 343.75px;
+    width: 100%;
     left: 0px;
     top: 0px;
     border-radius: 0px;
@@ -48,7 +48,7 @@
 
 .option-box-selected {
     height: 77px;
-    width: 343.75px;
+    width: 100%;
     left: 0px;
     top: 0px;
     border-radius: 0px;
@@ -58,15 +58,14 @@
     flex-direction: row;
     align-items: center;
     cursor: pointer;
-    background-color: #F0F0F0;
+    background-color: #f0f0f0;
 }
 
 .option-name-1 {
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 500;
     line-height: 19px;
     letter-spacing: 0.01em;
-    /* text-align: left; */
     color: #806bff;
 }
 
@@ -75,15 +74,13 @@
     font-weight: 500;
     line-height: 19px;
     letter-spacing: 0.01em;
-    /* text-align: left; */
     color: #ff6b6b;
 }
 
-
 .sidebar-heading-icon {
     background-image: url("../../../public/images/note-tracker.svg");
-    width: 30.56px;
-    height: 30.56px;
+    width: 2rem;
+    height: 2rem;
     /* Inside auto layout */
     flex: none;
     order: 0;
@@ -92,8 +89,8 @@
 
 .option-icon-1 {
     background-image: url("../../../public/images/notes.svg");
-    width: 42.01px;
-    height: 42.01px;
+    width: 2.2rem;
+    height: 2.2rem;
     margin: 15px;
     background-color: #806bff;
     text-align: center;
@@ -103,13 +100,12 @@
     background-position: center; /* center the image within the button */
     background-blend-mode: lighten;
     background-repeat: no-repeat;
-    
 }
 
 .option-icon-2 {
     background-image: url("../../../public/images/bookmarks.svg");
-    width: 42.01px;
-    height: 42.01px;
+    width: 2.2rem;
+    height: 2.2rem;
     margin: 15px;
     background-color: #ff6b6b;
     text-align: center;
@@ -119,5 +115,4 @@
     background-position: center; /* center the image within the button */
     background-blend-mode: lighten;
     background-repeat: no-repeat;
-
 }

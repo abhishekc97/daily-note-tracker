@@ -1,17 +1,17 @@
 .right-window-container {
-    height: 782px;
-    width: 756px;
+    height: 100%;
+    width: 100%;
 }
 
 .notes-window-container {
-    height: 717px;
-    width: 756px;
+    height: 90%;
+    width: 100%;
     overflow-y: scroll;
 }
 
 .input-box-container {
-    height: 65px;
-    width: 756px;
+    height: 10%;
+    width: 100%;
     left: 343.75px;
     top: 717.29px;
     background-color: #fff;
