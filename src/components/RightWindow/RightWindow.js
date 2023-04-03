@@ -23,8 +23,7 @@ function RightWindow({ notes, bookmarks, handleUpdate }) {
             date:
                 date.getDate() +
                 "-" +
-                date.getMonth() +
-                1 +
+                (date.getMonth() + 1) +
                 "-" +
                 date.getFullYear() +
                 " " +
@@ -32,7 +31,7 @@ function RightWindow({ notes, bookmarks, handleUpdate }) {
                 ":" +
                 date.getMinutes(),
         };
-
+        console.log(newCard);
         let newCards = [];
 
         if (location.pathname === "/") {
